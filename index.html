@@ -2,14 +2,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Vortex Redirect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORTEX</title>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5XLVHTGH"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-KW5XLVHTGH');
+gtag('config', 'G-XXXX');
 
 gtag('event', 'qr_scan', {
   event_category: 'QR',
@@ -17,14 +19,51 @@ gtag('event', 'qr_scan', {
 });
 
 setTimeout(function() {
-  window.location.href = "https://linktr.ee/Vortex_Media_Company";
-}, 800);
+  window.location.href = "https://your-linktree-link.com";
+}, 1000);
 </script>
 
-</head>
-<body style="background:black;color:white;text-align:center;margin-top:20%;">
+<style>
+body{
+  margin:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial, sans-serif;
+  color:white;
+  flex-direction:column;
+}
 
-VORTEX...
+.logo{
+  font-size:32px;
+  letter-spacing:4px;
+  font-weight:bold;
+}
+
+.loader{
+  margin-top:20px;
+  width:30px;
+  height:30px;
+  border:3px solid rgba(255,255,255,0.2);
+  border-top:3px solid white;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="logo">VORTEX</div>
+<div class="loader"></div>
 
 </body>
 </html>
