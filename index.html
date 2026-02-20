@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vortex Redirect</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXX');
+
+gtag('event', 'qr_scan', {
+  event_category: 'QR',
+  event_label: 'Main QR'
+});
+
+setTimeout(function() {
+  window.location.href = "https://example.com";
+}, 800);
+</script>
+
+</head>
+<body style="background:black;color:white;text-align:center;margin-top:20%;">
+
+Redirecting...
+
+</body>
+</html>
