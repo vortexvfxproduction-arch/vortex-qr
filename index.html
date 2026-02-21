@@ -15,14 +15,14 @@ gtag('config', 'G-KW5XLVHTGH', {
   transport_type: 'beacon'
 });
 
-// 🔹 قراءة UTM من الرابط
+// قراءة UTM من الرابط
 const params = new URLSearchParams(window.location.search);
 
 const utm_source = params.get('utm_source') || 'direct';
 const utm_medium = params.get('utm_medium') || 'none';
 const utm_campaign = params.get('utm_campaign') || 'general';
 
-// 🔹 تحديد نوع الجهاز
+//تحديد نوع الجهاز
 let device = "desktop";
 if (/mobile/i.test(navigator.userAgent)) {
   device = "mobile";
@@ -30,7 +30,7 @@ if (/mobile/i.test(navigator.userAgent)) {
   device = "tablet";
 }
 
-// 🔹 إرسال الحدث
+// إرسال الحدث
 gtag('event', 'qr_scan', {
   campaign: utm_campaign,
   source: utm_source,
@@ -38,7 +38,7 @@ gtag('event', 'qr_scan', {
   device_type: device
 });
 
-// 🔹 Redirect
+// Redirect
 setTimeout(function() {
   window.location.href = "https://linktr.ee/Vortex_Media_Company";
 }, 500);
