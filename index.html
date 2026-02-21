@@ -5,24 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VORTEX</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5XLVHTGH "></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5XLVHTGH"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'G-KW5XLVHTGH ', {
+gtag('config', 'G-KW5XLVHTGH', {
   transport_type: 'beacon'
 });
 
-// سجل حدث المسح
+// 🔹 قراءة UTM من الرابط
+const params = new URLSearchParams(window.location.search);
+
+const utm_source = params.get('utm_source') || 'direct';
+const utm_medium = params.get('utm_medium') || 'none';
+const utm_campaign = params.get('utm_campaign') || 'general';
+
+// 🔹 تحديد نوع الجهاز
+let device = "desktop";
+if (/mobile/i.test(navigator.userAgent)) {
+  device = "mobile";
+} else if (/tablet/i.test(navigator.userAgent)) {
+  device = "tablet";
+}
+
+// 🔹 إرسال الحدث
 gtag('event', 'qr_scan', {
-  event_category: 'QR',
-  event_label: 'Main QR'
+  campaign: utm_campaign,
+  source: utm_source,
+  medium: utm_medium,
+  device_type: device
 });
 
-// Redirect سريع
+// 🔹 Redirect
 setTimeout(function() {
   window.location.href = "https://linktr.ee/Vortex_Media_Company";
 }, 500);
@@ -41,13 +57,11 @@ body{
   color:white;
   flex-direction:column;
 }
-
 .logo{
-  font-size:32px;
+  font-size:28px;
   letter-spacing:4px;
   font-weight:bold;
 }
-
 .loader{
   margin-top:20px;
   width:30px;
@@ -57,7 +71,6 @@ body{
   border-radius:50%;
   animation:spin 1s linear infinite;
 }
-
 @keyframes spin{
   0%{transform:rotate(0deg);}
   100%{transform:rotate(360deg);}
