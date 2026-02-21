@@ -6,21 +6,27 @@
 <title>VORTEX</title>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5XLVHTGH"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5XLVHTGH "></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-KW5XLVHTGH');
 
+gtag('config', 'G-KW5XLVHTGH ', {
+  transport_type: 'beacon'
+});
+
+// سجل حدث المسح
 gtag('event', 'qr_scan', {
   event_category: 'QR',
   event_label: 'Main QR'
 });
 
+// Redirect سريع
 setTimeout(function() {
   window.location.href = "https://linktr.ee/Vortex_Media_Company";
-}, 800);
+}, 500);
+
 </script>
 
 <style>
@@ -49,7 +55,7 @@ body{
   border:3px solid rgba(255,255,255,0.2);
   border-top:3px solid white;
   border-radius:50%;
-  animation:spin 800ms linear infinite;
+  animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
@@ -61,9 +67,7 @@ body{
 </head>
 
 <body>
-
 <div class="logo">VORTEX</div>
 <div class="loader"></div>
-
 </body>
 </html>
