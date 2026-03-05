@@ -14,6 +14,7 @@ gtag('js', new Date());
 gtag('config', 'G-KW5XLVHTGH', {
   transport_type: 'beacon'
 });
+  gtag('event', 'page_view');
 
 // قراءة UTM من الرابط
 const params = new URLSearchParams(window.location.search);
@@ -35,13 +36,15 @@ gtag('event', 'qr_scan', {
   campaign: utm_campaign,
   source: utm_source,
   medium: utm_medium,
-  device_type: device
+  device_type: device,
+  event_callback: function() {
+    window.location.href = "https://linktr.ee/Vortex_Media_Company";
+  }
 });
 
-// Redirect
 setTimeout(function() {
   window.location.href = "https://linktr.ee/Vortex_Media_Company";
-}, 500);
+},700);
 
 </script>
 
